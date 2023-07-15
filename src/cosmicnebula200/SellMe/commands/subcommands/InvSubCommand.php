@@ -5,7 +5,7 @@ namespace cosmicnebula200\SellMe\commands\subcommands;
 use CortexPE\Commando\BaseSubCommand;
 use cosmicnebula200\SellMe\SellMe;
 use cosmicnebula200\SellMe\Utils;
-use pocketmine\block\VanillaBlocks;
+use pocketmine\item\VanillaItems;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 
@@ -28,7 +28,7 @@ class InvSubCommand extends BaseSubCommand
             if (Utils::getAmount($item) !== 0)
             {
                 $amount += (Utils::getAmount($item) * $item->getCount());
-                $inv->setItem($index, VanillaBlocks::AIR()->asItem());
+                $inv->setItem($index, VanillaItems::AIR());
             }
         }
         if ($amount == 0)

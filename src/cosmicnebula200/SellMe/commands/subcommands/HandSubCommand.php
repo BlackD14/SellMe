@@ -5,7 +5,7 @@ namespace cosmicnebula200\SellMe\commands\subcommands;
 use CortexPE\Commando\BaseSubCommand;
 use cosmicnebula200\SellMe\SellMe;
 use cosmicnebula200\SellMe\Utils;
-use pocketmine\block\VanillaBlocks;
+use pocketmine\item\VanillaItems;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 
@@ -32,7 +32,7 @@ class HandSubCommand extends BaseSubCommand
             'count' => $item->getCount(),
             'amount' => Utils::getAmount($item) * $item->getCount()
         ]));
-        $sender->getInventory()->setItemInHand(VanillaBlocks::AIR()->asItem());
+        $sender->getInventory()->setItemInHand(VanillaItems::AIR());
     }
 
 }

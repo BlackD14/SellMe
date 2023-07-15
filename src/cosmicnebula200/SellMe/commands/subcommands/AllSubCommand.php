@@ -5,7 +5,7 @@ namespace cosmicnebula200\SellMe\commands\subcommands;
 use CortexPE\Commando\BaseSubCommand;
 use cosmicnebula200\SellMe\SellMe;
 use cosmicnebula200\SellMe\Utils;
-use pocketmine\block\VanillaBlocks;
+use pocketmine\item\VanillaItems;
 use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 
@@ -36,7 +36,7 @@ class AllSubCommand extends BaseSubCommand
             {
                 Utils::sellItem($sender, $item);
                 $count = $count + $item->getCount();
-                $inv->setItem($slot, VanillaBlocks::AIR()->asItem());
+                $inv->setItem($slot, VanillaItems::AIR());
             }
         }
         $totalAmount = $amount * $count;
